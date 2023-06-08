@@ -20,19 +20,15 @@ const Formulario = () => {
         let consulta;
         console.log(cat)
         console.log(pais)
-        if(cat!='Seleccione una categoria'||cat!=''){
-            console.log("primer condicional")
+        if(categoria!='Seleccione una categoria'||categoria!=''){
             if(pais!='Seleccione un pais'||pais!=''){
-                console.log("segundo condicional")
                 consulta = await fetch(direccionConsulta+'&country='+pais+cat);
             } 
             else{
-                console.log("segundo condicional else")
                 consulta = await fetch(direccionConsulta+cat);
             }
         }
         else if(pais!=='Seleccione un pais'||pais!=''){
-            console.log("primer condicional else if")
             consulta = await fetch(direccionConsulta+'&country='+pais);
         } 
         else consulta = await fetch(direccionConsulta);
